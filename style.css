@@ -1,0 +1,97 @@
+body{
+    background-color: #777777;
+    color: #cecece;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.to-do-list-finished ul,
+.to-do-list ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.to-do-list-finished ul .to-do-item,
+.to-do-list ul .to-do-item{
+    padding: 10px;
+    border: 2px solid #949494;
+    border-radius: 4px;
+    display: flex;
+    background-color: #292929;
+    margin-bottom: 5px;
+}
+
+.to-do-list-finished ul .to-do-item input,
+.to-do-list ul .to-do-item input{
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    margin-right: 5px;
+}
+
+.to-do-list-finished ul .to-do-item p,
+.to-do-list ul .to-do-item p{
+    margin: 0;
+}
+
+.modal-formulario{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-formulario.open{
+    display: flex;
+}
+
+.modal-formulario .form-add-to-do{
+    position: relative;
+}
+.modal-formulario .form-add-to-do .button-close-modal{
+    position: absolute;
+    right: 0;
+}
+
+.modal-formulario .form-add-to-do .button-close-modal button{
+    background-color: transparent;
+    border: 0;
+    color: #777777;
+    font-size: 18px;
+}
+
+.modal-formulario .form-add-to-do .button-close-modal button:hover{
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal-formulario .form-add-to-do form{
+    background-color: #141414;
+    -webkit-box-shadow: 0px 0px 50px 0px rgba(20,20,20,1);
+    -moz-box-shadow: 0px 0px 50px 0px rgba(20,20,20,1);
+    box-shadow: 0px 0px 50px 0px rgba(20,20,20,1);
+}
+
+.form-add-to-do form{
+    width: 300px;
+    padding: 16px;
+    border-radius: 8px;
+}
+.form-add-to-do form .row{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+.form-add-to-do form .row input{
+    padding: 5px;
+    border-radius: 4px;
+}
+.form-add-to-do form .row textarea{
+    max-width: 100%;
+}
+.form-add-to-do form .row.left{
+    align-items: start;
+}

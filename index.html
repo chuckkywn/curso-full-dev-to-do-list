@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List - Curso Full Dev - Javascript+HTML+CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="to-do-list">
+        <h1>Tarefas a fazer</h1>
+        <ul id="toDoList">
+        </ul>
+    </div>
+    <div class="to-do-list-finished">
+        <h1>Tarefas concluidas</h1>
+        <ul id="toDoListFinished">
+            
+        </ul>
+    </div>
+    <div class="row">
+        <button type="button" onclick="openModal()">Inserir nova tarefa</button>
+    </div>
+    <div class="modal-formulario" id="modalForm">
+        <div class="form-add-to-do">
+            <div class="button-close-modal">
+                <button type="button" onclick="closeModal()">X</button>
+            </div>
+            <form id="formToDo" onsubmit="onSubmit(event)">
+                <div class="row">
+                    <label for="itemId">Identidicação:</label>
+                    <input type="number" name="itemId" id="itemId" required>
+                </div>
+                <div class="row">
+                    <label for="descricao">Descrição:</label>
+                    <!-- <input type="text" name="descricao" id="descricao" required minlength="10" maxlength="80"> -->
+                     <textarea name="descricao" id="descricao" rows="3"></textarea>
+                </div>
+                <div class="row">
+                    <label for="prioridade">Prioridade:</label>
+                    <input type="number" name="prioridade" id="prioridade" required>
+                </div>
+                <div class="row left">
+                    <label for="concluido">Concluido</label>
+                    <input type="checkbox" name="concluido" id="concluido">
+                </div>
+                <div class="row-footer-form">
+                    <button type="submit">Criar tarefa</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
