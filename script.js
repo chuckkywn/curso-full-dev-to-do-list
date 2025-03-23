@@ -15,6 +15,7 @@ function init() {
     elementToDoList = document.getElementById("toDoList");
     elementToDoListFinished = document.getElementById("toDoListFinished");
     getSavedList(1);
+    getSavedList(2);
 }
 
 function getSavedList(idList){
@@ -31,6 +32,17 @@ function getSavedList(idList){
             });
         }
     }else{
+        let listStrFinished = localStorage.getItem('toDoListFinished');
+        if(listStrFinished){
+            listStrFinished = JSON.parse(listStrFinished);
+            listStrFinished = listStrFinished.map((e)=>{
+                return JSON.parse(e);
+            });
+            console.log(listStrFinished);
+            listStrFinished.forEach(element => {
+                addElementList(element, 2);
+            });
+        }
         //Implementar buscar lista de tarefas concluidas na memoria
     }
 }
@@ -46,6 +58,9 @@ function addElementList(item, idList){
     }else{
         toDoListFinished.push(item);
         makeHtmlList(item, idList);
+        let listStrFinished = toDoListFinished.map((e)=>{
+            return JSON.stringify(e)});
+        localStorage.setItem('toDoListFinished', JSON.stringify(listStrFinished));
         //Implementar salvar item na memoria
     }
     resetForm();
